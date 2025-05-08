@@ -26,7 +26,7 @@
                                 @foreach($students as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->nama }}</td>
                                         <td>{{ $item->address }}</td>
                                         <td>{{ $item->mobile }}</td>
  

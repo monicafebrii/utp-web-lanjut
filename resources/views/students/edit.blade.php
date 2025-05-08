@@ -10,7 +10,7 @@
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$students->id}}" id="id" />
         <label>Name</label></br>
-        <input type="text" name="name" id="name" value="{{$students->name}}" class="form-control"></br>
+        <input type="text" name="nama" id="nama" value="{{$students->nama}}" class="form-control"></br>
         <label>Address</label></br>
         <input type="text" name="address" id="address" value="{{$students->address}}" class="form-control"></br>
         <label>Mobile</label></br>
