@@ -32,7 +32,7 @@
                                        
                                         <td>{{ $item->enroll_no }}</td>
                                         <td>{{ $item->batch->name }}</td>
-                                        <td>{{ $item->student->name }}</td>
+                                        <td>{{ $item->student->nama }}</td>
                                         <td>{{ $item->join_date }}</td>
                                         <td>{{ $item->fee }}</td>
  

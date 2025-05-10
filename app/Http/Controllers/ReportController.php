@@ -18,7 +18,7 @@ use App\Models\Payment;
         $print .= "<p> Recipt No : <b>" . $pid . " </b> </p>";
         $print .= "<p> Date : <b>" . $payment->paid_date . " </b></p>";
         $print .= "<p> Enrollment No : <b>" . $payment->enrollment->enroll_no . "</b></p>";
-        $print .= "<p> Student Name : <b>" . $payment->enrollment->student->name . "</b></p>";
+        $print .= "<p> Student Name : <b>" . $payment->enrollment->student->nama . "</b></p>";
     
         $print .= "<hr/>";
         $print .= "<table style='width: 100%;'>";
@@ -35,7 +35,7 @@ use App\Models\Payment;
         $print .= "</table>";
         $print .= "<hr/>";
         
-        $print .= "<p> Student Name : <b>" . optional(optional($payment->enrollment)->student)->name . "</b></p>";
+        $print .= "<p> Student Name : <b>" . optional(optional($payment->enrollment)->student)->nama . "</b></p>";
         $print .= "<span> Printed Date: <b>" . date('Y-m-d') . " </b></span>";
         
         $print .= "</div>";
