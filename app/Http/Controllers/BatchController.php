@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use App\Models\Batch;
+use App\Models\Course;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -27,7 +28,8 @@ class BatchController extends Controller
      */
     public function create()
     {
-        return view('batches.create');
+        $courses = Course::pluck('name','id');
+        return view('batches.create', compact('courses'));
     }
 
     /**
