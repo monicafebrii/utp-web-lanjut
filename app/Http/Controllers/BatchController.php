@@ -16,7 +16,7 @@ class BatchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         $batches = Batch::all();
         return view ('batches.index')->with('batches', $batches);
@@ -26,16 +26,17 @@ class BatchController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         $courses = Course::pluck('name','id');
         return view('batches.create', compact('courses'));
+        return view('batches.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request):RedirectResponse
     {
         $input = $request->all();
         Batch::create($input);
@@ -57,13 +58,14 @@ class BatchController extends Controller
     public function edit(string $id)
     {
         $batches = Batch::find($id);
-        return view('batches.edit')->with('batches', $batches);
+        $courses = Course::pluck('name','id');
+        return view('batches.create', compact('courses'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id):RedirectResponse
     {
         $batches = Batch::find($id);
         $input = $request->all();
